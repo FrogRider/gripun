@@ -43,6 +43,10 @@
             link: '@example.twitter'
           },
           {
+            name: 'reddit',
+            link: 'r/example.reddit'
+          },
+          {
             name: 'email',
             link: 'example@gripun.com'
           }
@@ -173,16 +177,20 @@
         background-repeat: no-repeat;
       }
 
-      &_instagram::before {
-            background-image: $instagram-icon-black;
-      }
+        &_instagram::before {
+              background-image: $instagram-icon-black;
+        }
 
-      &_twitter::before {
-            background-image: $twitter-icon;
-      }
+        &_twitter::before {
+              background-image: $twitter-icon;
+        }
 
-      &_email::before {
-        background-image: $email-icon;      
+        &_email::before {
+          background-image: $email-icon;      
+        }
+
+        &_reddit::before {
+        background-image: $reddit-icon;      
       }
       }
 
