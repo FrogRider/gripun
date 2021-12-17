@@ -1,10 +1,10 @@
 <template>
   <div class="homePage">
-    <!-- <div class="homePage__section homePage__section_video">
+    <div class="homePage__section homePage__section_video">
       
-    </div> -->
-    <video src="../assets/video.mp4" type='video/mp4' autoplay loop
- class="homePage__section homePage__section_video"></video>
+    </div>
+    <!-- <video src="../assets/video.mp4" type='video/mp4' autoplay loop
+ class="homePage__section homePage__section_video"></video> -->
 
     <div class="homePage__section homePage__section_centered">
       <div class="emailForm">
@@ -49,9 +49,9 @@
 
     &__section {
       &_video {
-        // background-image: url('../assets/HomepageGif.gif');
-        width: 100%;
-        height: 100%;
+        background-image: url('../assets/DesktopHomeVideoUpdated2.gif');
+        // width: 100%;
+        // height: 100%;
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
