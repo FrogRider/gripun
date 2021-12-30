@@ -11,7 +11,7 @@
         </div>
         <div class="contacts__middle">
           <div class="links">
-            <div class="link" v-for="link in links" :key="link.name">
+            <div class="link" v-for=" link in links" :key="link.name">
               <div class="link__name" :class="getLinkClass(link)">{{ link.name }}</div>
               <span>-</span>
               <div class="link__adress">{{ link.link }}</div>

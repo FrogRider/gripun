@@ -49,7 +49,7 @@
 
     &__section {
       &_video {
-        background-image: url('../assets/DesktopHomeVideoUpdated2.gif');
+        background-image: url('../assets/DesktopHomeVideoUpdated2 (1).gif');
         // width: 100%;
         // height: 100%;
         background-size: contain;

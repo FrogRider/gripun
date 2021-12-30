@@ -10,15 +10,20 @@ const routes = [
     name: 'Home',
     component: Home
   },
-  {
-    path: '/about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
-  },
+  // {
+  //   path: '/about',
+  //   name: 'About',
+  //   component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
+  // },
   {
     path: '/contacts',
     name: 'contacts',
     component: () => import('@/views/Contacts.vue')
+  },
+  {
+    path: '/share',
+    name: 'share',
+    component: () => import('@/views/Share.vue')
   }
 ]
 
