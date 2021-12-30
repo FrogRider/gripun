@@ -96,7 +96,6 @@ import TitleSection from "@/components/TitleSection.vue";
       padding: 100px 30px;
       background-color: $gray-light-color;
       margin: 0 20px;
-      clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 92% 100%, 10% 100%, 0 90%, 0 10%);
       border-radius: 50%;
 
       &::after {
