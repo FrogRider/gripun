@@ -109,7 +109,7 @@ import TitleSection from "@/components/TitleSection.vue";
         background-image: $stickman-background;
         background-position: center;
         background-repeat: no-repeat;
-        background-size: 11%;
+        background-size: 8%;
       }
 		}
 
