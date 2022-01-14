@@ -1,7 +1,7 @@
 <template>
   <div class="titleSection" :class="small ? 'titleSection_small' : ''">
-    <p class="titleSection__title">{{ title }}</p>
-    <p class="titleSection__subTitle">{{ subtitle }}</p>
+    <div class="titleSection__title">{{ title }}</div>
+    <p class="titleSection__subTitle" v-if="subtitle">{{ subtitle }}</p>
   </div>
 </template>
 
@@ -10,11 +10,10 @@
     props: {
       title: {
         type: String,
-        default: 'Title'
+        required: true
       },
       subtitle: {
-        type: String,
-        default: 'Subtitle'
+        type: String
       },
       small: {
         type: Boolean,
@@ -40,7 +39,6 @@
 
 		// .titleSection__title
 		&__title {
-      margin-bottom: 20px;
       font-size: 2em;
       font-weight: 600;
 		}
@@ -49,6 +47,7 @@
 		&__subTitle {
       font-size: 1.3em;
       font-weight: 500;
+      margin-top: 20px;
       color: $gray-hard-color;
 		}
 }

@@ -18,7 +18,7 @@
         <div class="emailForm__form">
           <div class="form">
             <input type="text" class="form__input" placeholder="Enter email adress">
-            <button class="form__button">Get early access</button>
+            <button class="form__button" @click="goToShare">Get early access</button>
           </div>
 
         </div>
@@ -34,6 +34,9 @@
     methods: {
       goToContacts() {
         this.$router.push({name: 'contacts'})
+      },
+      goToShare() {
+        this.$router.push({name: 'share'})
       }
     }
   }

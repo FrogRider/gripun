@@ -1,7 +1,7 @@
 <template>
   <div class="share" ref=window>
     
-    <TitleSection title="Thank you!" subtitle="We have added your email address to the sinup queue."/>
+    <TitleSection title="Thank you!" subtitle="We have added your email address to the signup queue."/>
 
     <div class="share__banner" ref="banner" :style="bannerBorderRadiusStyle">
       <p class="share__bannerTitle">
@@ -9,14 +9,11 @@
         <span>People ahead of you</span>
       </p>
       <p class="share__bannerSubtitle">
-        This reservation is held for alexgrior01@gmail.com. Is this <span>not you?</span>
+        This reservation is held for alexgrigor01@gmail.com. Is this <span>not you?</span>
       </p>
     </div>
 
-    <TitleSection 
-      title="Interested in priority access?" 
-      subtitle="Get early access by referring other people. The more people that join, the sooner you'll get acess."
-    />
+    <TitleSection title="Share with you friends!" />
     
     <div class="share__socials">
       <div 
@@ -28,7 +25,12 @@
       </div>
     </div>
 
-    <TitleSection title="Or share this unique link:" subtitle="https://www.examplewebsite.com/share?ajdfhrdj" :small="true"/>
+    <TitleSection
+      class="lineBreak"
+      title="Or share this unique link:"
+      subtitle="https://www.examplewebsite.com/share?ajdfhrdj"
+      :small="true"
+    />
 
   </div>
 </template>
@@ -79,12 +81,13 @@ import TitleSection from "@/components/TitleSection.vue";
   }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import "@/styles/main";
   .share {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 20px;
     padding: 50px 30px;
     min-height: 100vh;
 
@@ -93,10 +96,12 @@ import TitleSection from "@/components/TitleSection.vue";
 		&__banner {
       position: relative;
       text-align: center;
+      display: inline-block;
       padding: 100px 30px;
       background-color: $gray-light-color;
-      margin: 0 20px;
+      margin: 0 auto;
       border-radius: 50%;
+      width: 70%;
 
       &::after {
         content: "";
@@ -116,13 +121,21 @@ import TitleSection from "@/components/TitleSection.vue";
 
 		&__bannerTitle {
       font-weight: 600;
-      font-size: 2.5em;
+      font-size: 2.7em;
 		}
 
 		// .share__bannerSubtitle
 
 		&__bannerSubtitle {
       font-weight: 500;
+      font-size: 1.2em;
+
+      span {
+        color: $contrast-color;
+        &:hover {
+          cursor: pointer;
+        }
+      }
 		}
 
 		// .share__socials
@@ -144,6 +157,10 @@ import TitleSection from "@/components/TitleSection.vue";
       cursor: pointer;
       position: relative;
 
+      & + & {
+        // margin-left: 40px;
+      }
+
       &::after {
         content: "";
         width: 39px;
@@ -159,7 +176,48 @@ import TitleSection from "@/components/TitleSection.vue";
         background-image: $instagran-icon-green;
         background-size: 60%;
       }
+      &_tweeter::after {
+        background-image: $twitter-icon-green;
+        background-size: 60%;
+      }
+      &_facebook::after {
+        background-image: $facebook-icon-green;
+        background-size: 37%;
+        left: -5px;
+      }
+      &_reddit::after {
+        background-image: $reddit-icon-green;
+        background-size: 60%;
+      }
 		}
 }
+
+  @media screen and (max-width: 900px) {
+    .share {
+      &__socials {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-row-gap: 20px;
+      }
+
+      &__banner {
+        padding: 30px;
+        width: 100%;
+      }
+
+      &__bannerTitle {
+        font-size: 1.5em;
+      }
+
+      &__bannerSubtitle {
+        font-size: 0.9em;
+      }
+    }
+
+    .lineBreak p {
+        word-break: break-all;
+        white-space: normal;
+      }
+  }
 
 </style>
