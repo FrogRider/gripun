@@ -1,5 +1,6 @@
 <template>
   <div id="gripun">
+    <Preloader />
     <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -7,6 +8,15 @@
     <router-view/>
   </div>
 </template>
+
+<script>
+
+import { mapGetters } from "vuex";
+import Preloader from '@/components/Preloader.vue'
+  export default {
+    components: {Preloader}
+  }
+</script>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
@@ -21,4 +31,5 @@
 #gripun {
   overflow: hidden;
 }
+
 </style>

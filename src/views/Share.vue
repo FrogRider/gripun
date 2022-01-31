@@ -5,7 +5,7 @@
 
     <div class="share__banner" ref="banner" :style="bannerBorderRadiusStyle">
       <p class="share__bannerTitle">
-        <span>300,293 </span>
+        <span>{{ usersCount }} </span>
         <span>People ahead of you</span>
       </p>
       <p class="share__bannerSubtitle">
@@ -37,10 +37,13 @@
 
 <script>
 import TitleSection from "@/components/TitleSection.vue";
+import getUsersCount from "@/repositories/usersCount";
+
   export default {
     components: { TitleSection },
     data() {
       return {
+        usersCount: 0,
         bannerBorderRadius: 134,
         windowWidth: 1000,
         mobileSyulesStartsAt: 900,
@@ -64,9 +67,12 @@ import TitleSection from "@/components/TitleSection.vue";
         ]
       }
     },
-    mounted() {
+    async mounted() {
       this.windowWidth = this.$refs.window.clientWidth;
       this.bannerBorderRadius = this.windowWidth > this.mobileSyulesStartsAt ? this.$refs.banner.clientHeight / 2 : this.$refs.banner.clientWidth / 5;
+      this.showPreloader()
+      await getUsersCount().then(count => this.usersCount = count);
+      this.hidePreloader()
     },
     methods: {
       getButtonClass(modifyer) {
@@ -83,6 +89,7 @@ import TitleSection from "@/components/TitleSection.vue";
 
 <style lang="scss">
 @import "@/styles/main";
+
   .share {
     display: flex;
     flex-direction: column;
