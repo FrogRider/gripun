@@ -9,7 +9,7 @@
         <span>People ahead of you</span>
       </p>
       <p class="share__bannerSubtitle">
-        This reservation is held for alexgrigor01@gmail.com. Is this <span>not you?</span>
+        This reservation is held for {{ email }} Is this <span>not you?</span>
       </p>
     </div>
 
@@ -68,11 +68,15 @@ import getUsersCount from "@/repositories/usersCount";
       }
     },
     async mounted() {
-      this.windowWidth = this.$refs.window.clientWidth;
+      if(this.email) {
+        this.windowWidth = this.$refs.window.clientWidth;
       this.bannerBorderRadius = this.windowWidth > this.mobileSyulesStartsAt ? this.$refs.banner.clientHeight / 2 : this.$refs.banner.clientWidth / 5;
       this.showPreloader()
       await getUsersCount().then(count => this.usersCount = count);
       this.hidePreloader()
+      } else {
+        this.$router.go(-1);
+      }
     },
     methods: {
       getButtonClass(modifyer) {
@@ -82,6 +86,9 @@ import getUsersCount from "@/repositories/usersCount";
     computed: {
       bannerBorderRadiusStyle() {
         return `border-radius: ${this.bannerBorderRadius}px`
+      },
+      email() {
+        return this.$route.query.email;
       }
     }
   }

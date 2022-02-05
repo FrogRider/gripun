@@ -17,10 +17,10 @@
 
         <div class="emailForm__form">
           <div class="form">
-            <input type="text" class="form__input" placeholder="Enter email adress">
-            <button class="form__button" @click="goToShare">Get early access</button>
+            <input type="text" v-model="email" class="form__input" placeholder="Enter email adress">
+            <button class="form__button" :class="{'form__button_disabled': !isValid}" @click="goToShare">Get early access</button>
           </div>
-
+          <p class="emailForm__notValid" v-if="notValid">Not a valid e-mail address</p>
         </div>
       </div>
 
@@ -31,14 +31,35 @@
 
 <script>
   export default {
+    data() {
+      return {
+        email: '',
+        isValid: false
+      }
+    },
     methods: {
       goToContacts() {
         this.$router.push({name: 'contacts'})
       },
       goToShare() {
-        this.$router.push({name: 'share'})
+        if(this.isValid) this.$router.push({name: 'share', query: {email: this.email}})
+      },
+      validateEmail() {
+        const validator = /\S+@\S+\.\S+/;
+        // return re.test(email);
+        this.isValid = validator.test(this.email);
       }
-    }
+    },
+    computed: {
+      notValid() {
+        return this.email && !this.isValid
+      }
+    },
+    watch: {
+      email: {
+        handler: 'validateEmail'
+      }
+    },
   }
 </script>
 
@@ -73,6 +94,17 @@
     width: 100%;
     text-align: center;
     padding: 0 30px;
+
+    &__form {
+
+    }
+
+    &__notValid {
+      font-size: .9rem;
+      color: tomato;
+      text-align: left;
+      position: absolute;
+    }
 
     &__title {
       text-transform: uppercase;
@@ -111,6 +143,10 @@
       background-color: $main-dark-color;
       border: 2px solid $main-light-color;
       font-weight: 600;
+
+      &_disabled {
+        cursor: not-allowed;
+      }
     }
   }
 

@@ -23,6 +23,7 @@ const routes = [
   {
     path: '/share',
     name: 'share',
+    props: true,
     component: () => import('@/views/Share.vue')
   }
 ]
