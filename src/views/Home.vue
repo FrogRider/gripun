@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import sentEmail from "@/repositories/email";
   export default {
     data() {
       return {
@@ -41,8 +42,18 @@
       goToContacts() {
         this.$router.push({name: 'contacts'})
       },
-      goToShare() {
-        if(this.isValid) this.$router.push({name: 'share', query: {email: this.email}})
+      async goToShare() {
+        if(this.isValid) {
+          await sentEmail(this.email).then(responce => {
+            console.log(responce);
+            this.$router.push({name: 'share', query: {email: this.email}})
+          }).catch(() => {
+            this.$notify({
+              title: 'An error occurred, please try again',
+              type: 'error'
+            })
+          })
+        }
       },
       validateEmail() {
         const validator = /\S+@\S+\.\S+/;
