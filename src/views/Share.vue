@@ -9,7 +9,7 @@
         <span>People ahead of you</span>
       </p>
       <p class="share__bannerSubtitle">
-        This reservation is held for {{ email }} Is this <span>not you?</span>
+        This reservation is held for {{ email }} Is this <span @click="goToContacts">not you?</span>
       </p>
     </div>
 
@@ -79,6 +79,9 @@ import getUsersCount from "@/repositories/usersCount";
       }
     },
     methods: {
+      goToContacts() {
+        this.$router.push({name: 'contacts'})
+      },
       getButtonClass(modifyer) {
         return ` share__social_${modifyer}`
       }
@@ -146,6 +149,7 @@ import getUsersCount from "@/repositories/usersCount";
 
       span {
         color: $contrast-color;
+        cursor: pointer;
         &:hover {
           cursor: pointer;
         }

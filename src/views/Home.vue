@@ -9,10 +9,10 @@
     <div class="homePage__section homePage__section_centered">
       <div class="emailForm">
         <h1 class="emailForm__title">
-          gripun
+          GREYBOARD
         </h1>
         <p class="emailForm__subtitle">
-          Buy stocks of people, you follow online
+          Buy tokens of people, you follow online
         </p>
 
         <div class="emailForm__form">
