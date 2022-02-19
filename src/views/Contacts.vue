@@ -48,7 +48,7 @@
           },
           {
             name: 'email',
-            link: 'example@gripun.com'
+            link: 'example@greyboard.com'
           }
         ]
       }
