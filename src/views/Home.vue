@@ -1,14 +1,16 @@
 <template>
   <div class="homePage">
     <div class="homePage__section homePage__section_video">
-      
+      <video autoplay muted loop>
+            <source src="../assets/video.mp4" type="video/mp4">
+        </video>
     </div>
     <!-- <video src="../assets/video.mp4" type='video/mp4' autoplay loop
  class="homePage__section homePage__section_video"></video> -->
 
     <div class="homePage__section homePage__section_centered">
       <div class="emailForm">
-        <h1 class="emailForm__title">
+        <h1 class="emailForm__title test">
           GREYBOARD
         </h1>
         <p class="emailForm__subtitle">
@@ -84,13 +86,21 @@ import sentEmail from "@/repositories/email";
 
     &__section {
       &_video {
-        background-image: url('../assets/DesktopHomeVideoUpdated2 (1).gif');
+        // background-image: url('../assets/DesktopHomeVideoUpdated2 (1).gif');
         // width: 100%;
         // height: 100%;
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
-        background-color: $gray-light-color;;
+        background-color: $gray-light-color;
+        position: relative;
+
+        video {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          height: 100%;
+        }
       }
       &_centered {
         display: grid;
