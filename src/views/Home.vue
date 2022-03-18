@@ -103,16 +103,19 @@ import sentEmail from "@/repositories/email";
         }
       }
       &_centered {
-        display: grid;
-        place-items: center;
+        // display: grid;
+        // place-items: center;
       }
     }
   }
 
   .emailForm {
     // background-color: red;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
+    height: calc(100% - 1em - 10px);
     text-align: center;
     padding: 0 30px;
 
@@ -172,8 +175,9 @@ import sentEmail from "@/repositories/email";
   }
 
   .contact {
-    position: fixed;
-    bottom: 0;
+    // position: fixed;
+    // bottom: 0;
+    text-align: center;
     padding: 5px;
     color: $gray-hard-color;
     cursor: pointer;
