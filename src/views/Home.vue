@@ -1,8 +1,8 @@
 <template>
-  <div class="homePage">
+  <div class="homePage" @keyup.enter="goToShare">
     <div class="homePage__section homePage__section_video">
       <video autoplay muted loop>
-            <source src="../assets/video.mp4" type="video/mp4">
+            <source src="../assets/videoNoBg.mp4" type="video/mp4">
         </video>
     </div>
     <!-- <video src="../assets/video.mp4" type='video/mp4' autoplay loop

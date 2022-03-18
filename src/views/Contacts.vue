@@ -11,11 +11,11 @@
         </div>
         <div class="contacts__middle">
           <div class="links">
-            <div class="link" v-for=" link in links" :key="link.name">
+            <a class="link" v-for=" link in links" :href="link.href" target="_blank" :key="link.name">
               <div class="link__name" :class="getLinkClass(link)">{{ link.name }}</div>
               <span>-</span>
-              <div class="link__adress">{{ link.link }}</div>
-            </div>
+              <div class="link__adress">{{ link.lable }}</div>
+            </a>
           </div>
         </div>
         <div class="contacts__bottom">
@@ -36,19 +36,23 @@
         links: [
           {
             name: 'instagram',
-            link: '@example.instagram'
+            lable: '@greyboard.xyz',
+            href: ' https://www.instagram.com/greyboard.xyz/'
           },
           {
             name: 'twitter',
-            link: '@example.twitter'
+            lable: '@greyboard_xyz',
+            href: 'https://twitter.com/greyboard_xyz'
           },
           {
             name: 'reddit',
-            link: 'r/example.reddit'
+            lable: 'to be announced',
+            href: '#'
           },
           {
             name: 'email',
-            link: 'example@greyboard.com'
+            lable: 'greyboard.contact@gmail.com',
+            href: 'mailto:greyboard.contact@gmail.com'
           }
         ]
       }
@@ -148,6 +152,8 @@
   display: flex;
   justify-content: center;
   font-weight: 500;
+  color: #000;
+  text-decoration: none;
 
     & + & {
       margin-top: 50px;

@@ -9,7 +9,8 @@
         <span>People ahead of you</span>
       </p>
       <p class="share__bannerSubtitle">
-        This reservation is held for {{ email }} Is this <span @click="goToContacts">not you?</span>
+        This reservation is held for {{ email }} Is this <br>
+        <span @click="goToContacts">not you?</span>
       </p>
     </div>
 
@@ -27,8 +28,8 @@
 
     <TitleSection
       class="lineBreak"
-      title="Or share this unique link:"
-      subtitle="https://www.examplewebsite.com/share?ajdfhrdj"
+      title="Or share this link:"
+      subtitle="https://www.greyboard.xyz"
       :small="true"
     />
 
@@ -61,7 +62,7 @@ import getUsersCount from "@/repositories/usersCount";
             modifyer: "facebook"
           },
           {
-            title: "Reddit",
+            title: "TBA",
             modifyer: "reddit"
           }
         ]
@@ -150,6 +151,8 @@ import getUsersCount from "@/repositories/usersCount";
       span {
         color: $contrast-color;
         cursor: pointer;
+        position: relative;
+        z-index: 10;
         &:hover {
           cursor: pointer;
         }
