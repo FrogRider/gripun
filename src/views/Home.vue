@@ -1,10 +1,10 @@
 <template>
   <div class="homePage" @keyup.enter="goToShare">
     <div class="homePage__section homePage__section_video">
-      <video autoplay muted loop class="desktop">
+      <video poster="../assets/videoGif.gif" autoplay muted loop class="desktop">
             <source src="../assets/videoDesktop.mp4" type="video/mp4">
       </video>
-      <video autoplay="autoplay" loop="loop" muted defaultMuted playsinline  oncontextmenu="return false;"  preload="auto"  class="mobile">
+      <video poster="../assets/videoGif.gif" autoplay="autoplay" loop="loop" muted defaultMuted playsinline  oncontextmenu="return false;"  preload="auto"  class="mobile">
             <source src="../assets/videoMobile.mp4" type="video/mp4">
       </video>
     </div>
@@ -101,10 +101,12 @@ import sentEmail from "@/repositories/email";
         video {
           position: absolute;
           left: 50%;
-          transform: translateX(-50%);
+          top: 50%;
+          transform: translateX(-50%) translateY(-50%);
           height: 100%;
 
           &.mobile {
+            height: 85%;
             display: none;
           }
         }
