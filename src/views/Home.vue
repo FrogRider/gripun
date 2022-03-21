@@ -1,9 +1,12 @@
 <template>
   <div class="homePage" @keyup.enter="goToShare">
     <div class="homePage__section homePage__section_video">
-      <video autoplay muted loop poster="../assets/videoGif.gif">
-            <source src="../assets/videoNoBg.mp4" type="video/mp4">
-        </video>
+      <video autoplay muted loop poster="../assets/videoGif.gif" class="desktop">
+            <source src="../assets/videoDesktop.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop poster="../assets/videoGif.gif" class="mobile">
+            <source src="../assets/videoMobile.mp4" type="video/mp4">
+      </video>
     </div>
     <!-- <video src="../assets/video.mp4" type='video/mp4' autoplay loop
  class="homePage__section homePage__section_video"></video> -->
@@ -100,6 +103,10 @@ import sentEmail from "@/repositories/email";
           left: 50%;
           transform: translateX(-50%);
           height: 100%;
+
+          &.mobile {
+            display: none;
+          }
         }
       }
       &_centered {
@@ -198,6 +205,19 @@ import sentEmail from "@/repositories/email";
 
       &__section {
         // min-height: 100vh;
+
+        &_video {
+
+        video {
+          &.desktop {
+            display: none;
+          }
+
+          &.mobile {
+            display: block;
+          }
+        }
+      }
       }
     }
 
