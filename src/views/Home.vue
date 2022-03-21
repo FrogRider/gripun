@@ -1,7 +1,7 @@
 <template>
   <div class="homePage" @keyup.enter="goToShare">
     <div class="homePage__section homePage__section_video">
-      <video autoplay muted loop>
+      <video autoplay muted loop poster="../assets/videoGif.gif">
             <source src="../assets/videoNoBg.mp4" type="video/mp4">
         </video>
     </div>
