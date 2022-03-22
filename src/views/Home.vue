@@ -1,10 +1,10 @@
 <template>
   <div class="homePage" @keyup.enter="goToShare">
     <div class="homePage__section homePage__section_video">
-      <video autoplay muted loop class="desktop">
+      <video poster="../assets/loading.gif" autoplay muted loop class="desktop">
             <source src="../assets/videoDesktop.mp4" type="video/mp4">
       </video>
-      <video autoplay="autoplay" loop="loop" muted defaultMuted playsinline  oncontextmenu="return false;"  preload="auto"  class="mobile">
+      <video poster="../assets/loading.gif" autoplay="autoplay" loop="loop" muted defaultMuted playsinline  oncontextmenu="return false;"  preload="auto"  class="mobile">
             <source src="../assets/videoMobile.mp4" type="video/mp4">
       </video>
     </div>
