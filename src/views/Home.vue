@@ -209,6 +209,7 @@ import sentEmail from "@/repositories/email";
         // min-height: 100vh;
 
         &_video {
+        background-color: #eaeaea;
 
         video {
           &.desktop {

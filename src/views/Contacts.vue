@@ -80,6 +80,7 @@
         flex-direction: column;
         justify-content: space-between;
         padding: 50px 30px;
+        overflow-y: scroll;
       }
 
       &_dark {

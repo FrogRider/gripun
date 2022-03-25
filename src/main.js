@@ -4,7 +4,13 @@ import router from './router'
 import store from './store'
 import axios from "axios";
 import preloader from "@/mixins/preloader";
-import Notifications from 'vue-notification'
+import Notifications from 'vue-notification';
+import VueAnalytics from 'vue-analytics';
+
+Vue.use(VueAnalytics, {
+  id: 'G-6RP35JNPBY',
+  router
+});
 
 Vue.mixin(preloader);
 Vue.use(Notifications)
